@@ -1,24 +1,5 @@
-# README
+# Sorbet rails autoloading bug
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a ruby app to demonstrate the sorbet bug discussed here:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://stackoverflow.com/questions/65941290/sorbet-fails-when-using-creating-an-instance-of-an-autoloaded-class-in-rails-ini
