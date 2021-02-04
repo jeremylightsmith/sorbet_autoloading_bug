@@ -1,0 +1,40 @@
+<h1>Sorbet bug example</h1>
+
+<p>
+  The problem is that when an object is created in the initializer, it's class is not _exactly_ the same as the one
+  that is reloaded. Sorbet considers them to be different classes.
+</p>
+
+<hr>
+
+<p>
+  So, when we try to initialize our object in development and load it as STACK, sorbet complains when we compare it to
+  the Stack class.
+</p>
+
+<p>
+  <%= link_to "watch it break", "/breaks", target: "_blank" %>
+</p>
+
+<p>
+  We get "Parameter 'stack': Expected type Stack, got type Stack with hash 259033839440389359", we _should_ see a list
+  of all the values in the stack.
+</p>
+
+<p>
+  To make this work, just remove the sorbet line of `hello_world_controller.rb` on line 18.
+</p>
+
+<p>
+  Note: `srb tc` passes just fine with no changes.
+</p>
+
+<hr>
+
+<p>
+  But, when we just new up a new instance of the stack class, sorbet is fine.
+</p>
+
+<p>
+  <%= link_to "watch it work", "/works", target: "_blank" %>
+</p>
