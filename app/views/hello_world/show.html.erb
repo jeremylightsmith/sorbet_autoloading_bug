@@ -38,3 +38,21 @@
 <p>
   <%= link_to "watch it work", "/works", target: "_blank" %>
 </p>
+
+<p>
+  There are 2 Stack types, the type that has been autoloaded:<br/>
+
+  <%= Stack %>, <%= Stack.object_id %><br/>
+
+  and the type that was loaded upon initialization:<br/>
+
+  <%= ::STACK.class %>, <%= ::STACK.class.object_id %><br/>
+
+  and ruby does not think they are the same:<br/>
+
+  Stack.new.is_a?(::STACK.class) = <%= Stack.new.is_a?(::STACK.class) %><br/>
+
+  Stack == ::STACK.class = <%= Stack == ::STACK.class %><br/>
+
+  ::STACK.is_a?(Stack) = <%= ::STACK.is_a?(Stack) %><br/>
+</p>
